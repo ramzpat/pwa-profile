@@ -20,12 +20,22 @@ const App:React.FC = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <div id="p-name" onClick={() => {addMessage("A")}} >{profile.name}</div>      
-        
-        Log messages:
-        <LogConsole logMessages={logMessages} setMessages={setMessages} />
-      </header>
+      <div className="App-header">
+
+        <div id="p-name" className='container' >
+          <input type="button" value="Click me!" onClick={() => {addMessage("B")}} />
+          <input type="button" value="Send msg!" onClick={() => {
+            navigator.serviceWorker.controller?.postMessage({
+              "Hello":"Hello"
+            })
+          }} />
+          <span id="name_show">{profile.name}</span>
+        </div>      
+        <div id="console">
+          Log messages:
+          <LogConsole logMessages={logMessages} setMessages={setMessages} />
+        </div>
+      </div>
     </div>
   );
 }

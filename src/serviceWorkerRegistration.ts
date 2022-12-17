@@ -24,9 +24,12 @@ type Config = {
 };
 
 export function register(config?: Config) {
+  console.log(process.env.NODE_ENV)
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+    console.log('production?');
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
+    console.log(publicUrl);
     if (publicUrl.origin !== window.location.origin) {
       // Our service worker won't work if PUBLIC_URL is on a different origin
       // from what our page is served on. This might happen if a CDN is used to
@@ -34,6 +37,7 @@ export function register(config?: Config) {
       return;
     }
 
+    console.log('load?');
     window.addEventListener('load', () => {
       const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 
@@ -58,16 +62,20 @@ export function register(config?: Config) {
 }
 
 function registerValidSW(swUrl: string, config?: Config) {
+  console.log('registerValidSW');
   navigator.serviceWorker
     .register(swUrl)
     .then((registration) => {
+      console.log('inside registeration');
       registration.onupdatefound = () => {
+        console.log('found update');
         const installingWorker = registration.installing;
         if (installingWorker == null) {
           return;
         }
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
+            console.log('installed?');
             if (navigator.serviceWorker.controller) {
               // At this point, the updated precached content has been fetched,
               // but the previous service worker will still serve the older
