@@ -7,8 +7,8 @@ services:
     build:
       dockerfile: Dockerfile
     ports:
-      - 80:80
-      - 443:443
+      - 3000:80
+      - 3001:443
     volumes:
       - ./nginx/conf/:/etc/nginx/conf.d/:ro
       - ./nginx/certs:/etc/nginx/ssl
