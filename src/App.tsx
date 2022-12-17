@@ -1,26 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
+import LogConsole from './components/LogConsole';
 import './App.css';
+import profile from './assets/profile.json'
 
-function App() {
+const App:React.FC = () => {
+  const [logMessages, setMessages] = useState<string[]>([]);  
+  const addMessage = (s:string) => {
+    if (s) {
+      setMessages([...logMessages, s]);
+      // navigator.serviceWorker.controller?.postMessage({
+      //   "Hello":"Hello"
+      // })
+    }
+  }
+  // navigator.serviceWorker.onmessage = (ev) => {
+  //   addMessage("Test2")
+  // }
+
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      
-      This is a book
+      <header className="App-header">
+        <div id="p-name" onClick={() => {addMessage("A")}} >{profile.name}</div>      
+        
+        Log messages:
+        <LogConsole logMessages={logMessages} setMessages={setMessages} />
+      </header>
     </div>
   );
 }
