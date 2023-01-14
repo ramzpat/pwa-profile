@@ -11,7 +11,7 @@ interface exp_info_t {
 const Experience:React.FC<{exp_list:exp_info_t[]}> = ({exp_list}) => {
   return (
     <div id='exp_bg' style={{width:"100%", fontSize:"x-large", marginTop:"20px", textAlign:"left", paddingLeft:"25px"}}>
-      <div style={{width:"100%"}}>Education:</div>
+      <div style={{width:"100%"}}>Experience:</div>
       {
         exp_list.map(
           (info, index) => (
