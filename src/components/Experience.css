@@ -1,0 +1,48 @@
+
+.exp_box {
+  width: 100%;
+  display: block;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.company_title {
+  width: 100%;
+}
+
+.company_period {
+  width: 100%;
+  display: block;
+  font-size: small;
+  font-style: italic;
+}
+.company_position {
+  width: 100%;
+  font-size: large;
+  font-style: italic;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  
+  .exp_box {
+    display: flex;
+    /* flex-direction:column; */
+    flex-flow:wrap;
+  }
+
+  .company_title {
+    width: 70%;
+    /* white-space: nowrap; */
+  }
+
+  .company_period {
+    width: 30%;
+    display: block;
+    font-size: large;
+  }
+  .company_position {
+    width: 100%;
+    font-size: x-large;
+  }
+}

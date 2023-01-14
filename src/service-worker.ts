@@ -72,43 +72,42 @@ registerRoute(
 
 // An example runtime caching route for requests that aren't handled by the
 // precache, in this case same-origin .png requests like those from in public/
-registerRoute(
-  // Add in any other file extensions or routing criteria as needed.
-  ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.json'),
-  // Customize this strategy as needed, e.g., by changing to CacheFirst.
-  new StaleWhileRevalidate({
-    cacheName: 'json',
-    plugins: [
-      // Ensure that once this runtime cache reaches a maximum size the
-      // least-recently used images are removed.
-      new ExpirationPlugin({ maxEntries: 50 }),
-    ],
-  })
-);
+// registerRoute(
+//   // Add in any other file extensions or routing criteria as needed.
+//   ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.json'),
+//   // Customize this strategy as needed, e.g., by changing to CacheFirst.
+//   new StaleWhileRevalidate({
+//     cacheName: 'json',
+//     plugins: [
+//       // Ensure that once this runtime cache reaches a maximum size the
+//       // least-recently used images are removed.
+//       new ExpirationPlugin({ maxEntries: 50 }),
+//     ],
+//   })
+// );
 
 
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }  
+// self.addEventListener('message', (event) => {
+//   if (event.data && event.data.type === 'SKIP_WAITING') {
+//     self.skipWaiting();
+//   }  
 
-  // Select who we want to respond to
-  self.clients.matchAll({
-    includeUncontrolled: true,
-    type: 'window',
-  }).then((clients) => {
-    if (clients && clients.length) {
-      // Send a response - the clients
-      // array is ordered by last focused
-      clients[0].postMessage({
-        type: 'REPLY_COUNT',
-        count: 0,
-      });
-    }
-  });
-
-});
+//   // Select who we want to respond to
+//   self.clients.matchAll({
+//     includeUncontrolled: true,
+//     type: 'window',
+//   }).then((clients) => {
+//     if (clients && clients.length) {
+//       // Send a response - the clients
+//       // array is ordered by last focused
+//       clients[0].postMessage({
+//         type: 'REPLY_COUNT',
+//         count: 0,
+//       });
+//     }
+//   });
+// });
 
 // Any other custom service worker logic can go here.

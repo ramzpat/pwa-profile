@@ -1,0 +1,47 @@
+
+#header_section {
+  width: 100%;
+  display: block;
+  padding-top: 30px;
+  padding-left: 25px;
+}
+
+#title_section {
+  width: 100%;
+  text-align: left;
+  font-size:xx-large;
+  white-space: nowrap;
+}
+
+.small_hide {
+  display: none;
+}
+
+#link_section {
+  width: 100%;
+  margin-top: 10px;
+  text-align: left;
+  font-size:medium;
+}
+
+@media only screen and (min-width: 768px) {
+  .small_hide {
+    display:flex;
+  }
+
+  /* For desktop: */
+  #header_section {
+    display: flex;
+  }
+
+  #title_section {
+    width: 55%;
+  }
+  #link_section {
+    margin-top: 0px;
+    margin-left: auto;
+    width: 35%;
+    max-width: 350px;
+  }
+  
+}

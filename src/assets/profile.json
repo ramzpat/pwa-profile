@@ -1,3 +1,57 @@
 {
-  "name":"Pattaravut Maleehuan"
+  "first_name":"Pattaravut",
+  "last_name":"Maleehuan",
+  "position":"Software Engineer",
+  "experiences":[
+    {
+      "company":"eSOL Co., Ltd",
+      "company_link":"esol.co.jp",
+      "location":"Tokyo, Japan",
+      "position":"Software Engineer",
+      "period":"April 2019 - Present"
+    },
+    {
+      "company":"Japan Advanced Institute of Science and Technology",
+      "company_link":"jaist.ac.jp",
+      "location":"Ishikawa, Japan",
+      "position":"Post doctoral",
+      "period":"October 2018 - March 2019"
+    }
+  ], 
+  "awards":[
+    {
+      "title":"Japanese Government Scholarship (MEXT)",
+      "time":"October 2013 - September 2018",
+      "desc":"Scholarship (MEXT) for Master’s Degree and Ph.D."
+    },
+    {
+      "title":"Winner - National Software Contest (NSC)",
+      "time":"January 2009",
+      "desc":"3D RPG Turn based game. Developed on C++ and Irrlicht Engine. We also got a merit reward from Asia Pacific ICT Award (Melbourne, Australia)."
+    },
+    {
+      "title":"Merit award - National Software Contest (NSC)",
+      "time":"January 2007",
+      "desc":"My team got a merit award in secondary student entertainment application with title “Gunslinger”."
+    },
+    {
+      "title":"Won 2nd runner up of National Software Contest (NSC)",
+      "time":"January 2006",
+      "desc":"My team got the third place for secondary student entertainment application with title “Ramayana Battle”."
+    }
+  ],
+  "education":[
+    {
+      "institute":"Japan Advanced Institute of Science and Technology",
+      "institute_link":"https://jaist.ac.jp",
+      "location":"Ishikawa, Japan",
+      "degree": "Master and Ph.D."
+    },
+    {
+      "institute":"Chulalongkorn University",
+      "institute_link":"https://www.chula.ac.th",
+      "location":"Bangkok, Thailand",
+      "degree": "Bachelor of Computer Engineering"
+    }
+  ]
 }
