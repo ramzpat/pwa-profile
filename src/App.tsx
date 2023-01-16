@@ -6,7 +6,7 @@ import my_profile from './assets/profile.json'
 
 // Components
 import Header from './components/Header';
-import Award from './components/Awards';
+// import Award from './components/Awards';
 import Education from './components/Education';
 import Experience from './components/Experience';
 
@@ -33,9 +33,10 @@ const App:React.FC = () => {
 
   const Footer:React.FC = () => {
     return (
-      <div id='footer' style={{width:"100%", fontSize:"x-large", marginTop:"auto", paddingTop:"40px", paddingBottom:"25px", textAlign:"center"}}>
+      <div id='footer'>
         <div style={{width:"100%", fontSize:"medium"}}>
-          <a href='https://github.com/ramzpat/pwa-profile'>source code</a> | Last update: 2023-01-14
+          <a href='https://github.com/ramzpat/pwa-profile'>source code</a>
+           | Last update: 2023-01-16
         </div>
       </div>
     )
@@ -50,7 +51,7 @@ const App:React.FC = () => {
         <hr style={{marginLeft:"10px", marginRight:"10px", width:"95%"}} />
         <OngoingProjects />
         <Experience exp_list={my_profile.experiences} />
-        <Award award_list={my_profile.awards} />
+        {/* <Award award_list={my_profile.awards} /> */}
         <Education edu_list={my_profile.education}/>
         <Footer />
       </div>

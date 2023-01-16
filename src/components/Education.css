@@ -9,9 +9,10 @@
 .institute_title {
   width: 100%;
 }
-.institute_location {
-  font-size: medium;
-  display: none;
+.institute_period {
+  width: 100%;
+  display: block;
+  font-size: small;
 }
 .edu_degree {
   width: 100%;
@@ -33,10 +34,10 @@
     white-space: nowrap;
   }
 
-  .institute_location {
+  .institute_period {
     width: 30%;
     display: block;
-    font-size: x-large;
+    font-size: large;
   }
   .edu_degree {
     width: 100%;
